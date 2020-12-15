@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { log } from 'src/app/services/console.service';
+import { log } from '../../services/console.service';
+
 
 @Component({
   selector: 'app-observables',
