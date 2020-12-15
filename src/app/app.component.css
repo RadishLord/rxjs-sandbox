@@ -1,0 +1,20 @@
+#main-container{
+    display: flex;
+}
+mat-selection-list {
+    width: 25%;
+    min-width: 220px;
+    border: groove 1px black;
+    margin-right: 5px;
+    padding: none !important;
+}
+#main-box {
+    width: 73%;
+}
+.list-opt {  
+    height: 20px !important; 
+}
+.list-opt:hover {  
+    background-color: green !important; 
+    color: white;
+}
