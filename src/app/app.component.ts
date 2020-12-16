@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "rxjs-sandbox1";
-  componentsList: string[] = ['Observables', 'Subjects', 'Connectable Observables', 'Combinations'];
+  componentsList: string[] = ['Observables', 'Subjects', 'Multicasted Observable', 'Combinations'];
 }

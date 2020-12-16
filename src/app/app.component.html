@@ -1,34 +1,34 @@
 <div id="main-container">
-  <mat-selection-list #shoes [multiple]="false">
-    <mat-list-option class="list-opt" *ngFor="let item of componentsList" [value]="item">
-        {{item}}
-    </mat-list-option>
-</mat-selection-list>
+    <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option class="list-opt" *ngFor="let item of componentsList" [value]="item">
+            {{item}}
+        </mat-list-option>
+    </mat-selection-list>
 
-<div id="main-box">
-  <p>
-    Текщий модуль: {{shoes.selectedOptions.selected[0]?.value}} 
-  </p>
-  <p>
-    Необходимо открыть консоль - f12 
-  </p>
-  <div *ngIf="shoes.selectedOptions.selected[0]?.value !== undefined">
-    <div id="module-window" style="background-color: grey; width: 90%; height: 500px">
-      <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Observables'">
-        <app-observables></app-observables>
-      </div>
-      <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Subjects'">
-      <app-subjects></app-subjects>
-      </div>
-      <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Connectable Observables'">
-        <app-connectable></app-connectable>
-      </div>
-      <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Combinations'">
-      <app-combine></app-combine>
-      </div>
+    <div id="main-box">
+        <p>
+            Текщий модуль: {{shoes.selectedOptions.selected[0]?.value}}
+        </p>
+        <p>
+            Необходимо открыть консоль - f12
+        </p>
+        <div *ngIf="shoes.selectedOptions.selected[0]?.value !== undefined">
+            <div id="module-window" style="background-color: #80808014; width: 90%; height: 500px">
+                <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Observables'">
+                    <app-observables></app-observables>
+                </div>
+                <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Subjects'">
+                    <app-subjects></app-subjects>
+                </div>
+                <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Multicasted Observable'">
+                    <app-connectable></app-connectable>
+                </div>
+                <div *ngIf="shoes.selectedOptions.selected[0]?.value === 'Combinations'">
+                    <app-combine></app-combine>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 </div>
