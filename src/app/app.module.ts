@@ -8,7 +8,7 @@ import { ObservablesComponent } from './components/observables/observables.compo
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { ConnectableComponent } from './components/connectable/connectable.component';
 import { CombineComponent } from './components/combine/combine.component'
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { CombineComponent } from './components/combine/combine.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,3 +2,33 @@
     display: flex;
     flex-direction: column
 }
+button {
+    cursor: pointer;
+}
+
+.btn-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+    .btn-box :first-child {
+        width: 80%;
+    }
+    .btn-box :last-child {
+        width: 20%;
+    }
+
+.btn-box3 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+    .btn-box3 button {
+        width: 20%;
+    }
+    .btn-box3 :first-child {
+        width: 60%;
+    }
+    .btn-box3 :last-child {
+        width: 20%;
+    }

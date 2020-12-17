@@ -48,11 +48,20 @@ export class ObservablesComponent implements OnInit, OnDestroy {
 
 
     //конечный observable
-    const finitHotObs$ = zip(of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), interval(1000).pipe(take(10)));
-    // подписываемся на бесконечный observable
+    const finitColdObs$ = zip(of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), interval(1000).pipe(take(10)));
+    // const finitColdObs$ = new Observable<number>((subscriber) => {
+    //   subscriber.next(1);
+    //   subscriber.next(2);
+    //   subscriber.next(3);
+    //   setTimeout(_ => subscriber.next(4), 1000);
+    //   setTimeout(_ => subscriber.next(5), 2000);
+    //   setTimeout(_ => subscriber.next(6), 3000);
+    //   setTimeout(_ => subscriber.next(7), 4000);
+    // });
+    // подписываемся на конечный observable
     const btn3Click = fromEvent(document.querySelector('#btn3') , 'click').subscribe(_ => {
       const i = this.finitCount++;
-      this.finitSub = finitObs$.subscribe(x => log(`finitColdObs$: ${x[0]}`, getColor(i)))
+      this.finitSub = finitColdObs$.subscribe(x => log(`finitColdObs$: ${x}`, getColor(i)))
     });
     // отписываемся 
     const btn4Click = fromEvent(document.querySelector('#btn4') , 'click').subscribe(_ => {
@@ -83,7 +92,7 @@ export class ObservablesComponent implements OnInit, OnDestroy {
 
 
     //конечный observable
-    const finitObs$ = zip(of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), interval(1000).pipe(take(10))).pipe(share()); // TODO
+    const finitHotObs$ = zip(of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), interval(1000).pipe(take(10))).pipe(share()); 
     // подписываемся на бесконечный observable
     const btn7Click = fromEvent(document.querySelector('#btn7') , 'click').subscribe(_ => {
       const i = this.finitHotCount++;
@@ -94,11 +103,8 @@ export class ObservablesComponent implements OnInit, OnDestroy {
       if (this.finitHotSub && typeof this.finitHotSub.unsubscribe === "function"){
         this.finitHotSub.unsubscribe();
         log('this.finitHotSub  was unsubscribed', 'crimson');
-      }
-        
+      }       
     });
-
-
 
   }
 

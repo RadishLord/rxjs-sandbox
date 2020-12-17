@@ -1,7 +1,17 @@
 <h1>subjects</h1>
 <div class="button-list">
-    <button id="btn1">Subject</button>
-    <button id="btn2">BehaviorSubject</button>
-    <button id="btn3">ReplaySubject</button>
-    <button id="btn4">AsyncSubject</button>
+    <button id="btn1" [ngClass]="{selected: sbjCounts.subject > 0}">Subject {{sbjCounts.subject}}</button>
+    <button id="btn2" [ngClass]="{selected: sbjCounts.behaviorSubject > 0}">BehaviorSubject {{sbjCounts.behaviorSubject}}</button>
+    <button id="btn3" [ngClass]="{selected: sbjCounts.repleySubject > 0}">ReplaySubject {{sbjCounts.repleySubject}}</button>
+    <div class="btn-box">
+        <button id="btn4" [ngClass]="{selected: sbjCounts.asyncSubject > 0}">AsyncSubject {{sbjCounts.asyncSubject}}</button>
+        <button id="btn5">Complete last</button>
+    </div>
+
+
+    <div id="input-box">
+        <input id="subj-input" type="text" [(ngModel)]="subjectInput">
+        <button id="subj-add">Добавить</button>
+    </div>
+
 </div>
