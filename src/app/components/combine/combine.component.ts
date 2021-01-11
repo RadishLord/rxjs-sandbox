@@ -93,7 +93,14 @@ export class CombineComponent implements  OnInit, OnDestroy {
     }).pipe(mergeAllWatch('B$'));
     fromEvent(document.querySelector('#btn4') , 'click').pipe(takeUntil(this.destroyed)).subscribe(_ => {
       //todo
-        const mergeAllSub = scheduled([mergeAllA$, mergeAllB$], queueScheduler).pipe(mergeAll(), mergeAllWatch('mergeAllAB$')).subscribe(x => log('mergeAll: ' + x, 'blue'));
+
+      //const mergeAllSub = scheduled([mergeAllA$, mergeAllB$], queueScheduler).pipe(mergeAll(), mergeAllWatch('mergeAllAB$')).subscribe(x => log('mergeAll: ' + x, 'blue'));
+      const mergeAllSub = mergeAllA$.pipe(
+        map(a => mergeAllB$.pipe(
+        map(b => `${a} + ${b}`))), 
+        mergeAll(), 
+        mergeAllWatch('mergeAllAB$')
+      ).subscribe(x => log('mergeAll: ' + x, 'blue'));
     });
 
     //  --  ConcatAll --  //

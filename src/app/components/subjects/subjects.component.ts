@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AsyncSubject, BehaviorSubject, fromEvent, ReplaySubject, Subject } from 'rxjs';
-import { getColor } from 'src/app/services/colors.service';
+import { getColor } from '../../services/colors.service';
 import { log } from '../../services/console.service';
 
 @Component({
